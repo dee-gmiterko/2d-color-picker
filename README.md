@@ -2,7 +2,7 @@
 
  I tried to rethink way we approach one very simple task - selection of color. My color picker has colors organized only in two dimensional plane instead of usual three dimensional cube.
 
-[2D color picker](https://raw.githubusercontent.com/Linzee/2d-color-picker/master/output/colorScheme.png)
+![2D color picker](https://raw.githubusercontent.com/Linzee/2d-color-picker/master/output/colorScheme.png)
 
 ### Usage
 
