@@ -1,7 +1,7 @@
 import numpy as np
 import pylab as plt
 import pandas as pd
-from scipy import misc
+import imageio
 
 def generatePalette(data, model):
 
@@ -28,7 +28,7 @@ def generatePalette(data, model):
     print("Generating colors..")
     colorScheme = weights.apply(lambda weights: pd.Series([np.sum(weights * colors[:,0]), np.sum(weights * colors[:,1]), np.sum(weights * colors[:,2])], index=['r', 'g', 'b']), axis=1)
 
-    misc.imsave("output/colorScheme.png", np.reshape(colorScheme.values, (SIZE, SIZE, 3)))
+    imageio.imwrite("output/colorScheme.png", np.reshape(colorScheme.values, (SIZE, SIZE, 3)))
 
 def modelView(data, model):
     model = model.transpose()

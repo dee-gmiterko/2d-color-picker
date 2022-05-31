@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from scipy import misc
+import imageio
 from skimage.transform import resize
 
 def imgFeatures(img, i, photos):
@@ -37,7 +37,7 @@ def extractData(path, dataLimit, removeDupliciteColors, duplicityAccuracu):
     print("Loading", len(photos), "photos..")
     print("Using size", (size, size))
 
-    photos = [resize(misc.imread(path+photo), (size, size), anti_aliasing=False) for photo in photos]
+    photos = [resize(imageio.imread(path+photo), (size, size), anti_aliasing=False) for photo in photos]
     photos = [img.reshape(-1, img.shape[-1]) for img in photos]
 
     print("Extracting relations..")
